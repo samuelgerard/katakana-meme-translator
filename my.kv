@@ -1,0 +1,67 @@
+<MyGrid>:
+
+	inputted_text:inputted_text
+	output_text:output_text
+
+	GridLayout:
+		cols:1
+
+		size: root.width, root.height
+
+
+
+		GridLayout:
+			cols:2
+
+			Label:
+				font_name:"/home/sam-gooby/fun_projects/katakana-meme-translator/JapaneseCharSet/NotoSansCJK-Regular.ttc"
+				multiline:True
+				text:'Text to be translated:\n翻訳する'
+
+
+			TextInput:
+				id:inputted_text
+				
+			Label:
+				font_name:"/home/sam-gooby/fun_projects/katakana-meme-translator/JapaneseCharSet/NotoSansCJK-Regular.ttc"
+				multiline:True
+				text:'Outputted Translation\n翻訳出力'
+
+				
+
+			TextInput:
+				font_name:"/home/sam-gooby/fun_projects/katakana-meme-translator/JapaneseCharSet/NotoSansCJK-Regular.ttc"
+				id:output_text
+				
+
+
+		Button:
+			text:"Submit"
+			on_press:root.btn()
+
+<Touch>:
+	btn:btn
+
+
+	Button:
+		size: root.width, root.height
+		id:btn
+		text:"My_btn"
+
+<Button>:
+
+	font_size:15
+	color:0.3,0.6,0.7,1
+	size_hint: 0.3, 0.5
+
+<FloatLayout>:
+	Button:
+		pos_hint:{"x":0.5, "top":1}
+		text: "Gooby"
+
+	Button:
+		id: btn
+		post_hint:{"y":0.3}
+		text: "Grooves" if btn.state == "normal" else "down"
+		background_color: 0.3, 0.4, 0.5,1	
+	
