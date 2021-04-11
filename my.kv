@@ -8,24 +8,43 @@
 
 		size: root.width, root.height
 
-
+		Label:
+			size_hint_y: None
+    		text_size: self.width, None
+    		height: self.texture_size[1]
+			multineline: True
+			padding_x: 50
+			padding_y: 50
+			text:'Welcome to the "Full Katakana Translator"TM made by Gooby Grooves! This applications sole purpose, for now, is to take giant walls of text/copypasta and completely translate it into full katakana. Functionality is currently limited to just simple user input and output of the katakana string. This program is not really meant to be taken seriously, but if you have suggestions, feel free to reach out. Happy katakana shitposting!\n\nPlease be aware that depending on the size of the wall of text, the translation query can take up to 45-60 seconds.'
 
 		GridLayout:
 			cols:2
 
 			Label:
+				canvas.before:
+	        		Color:
+	            		rgba: .3, .5, .7, 1
+	        		Line:
+	            		width: 2
+	            		rectangle: self.x, self.y, self.width, self.height
 				font_name:"/home/sam-gooby/fun_projects/katakana-meme-translator/JapaneseCharSet/NotoSansCJK-Regular.ttc"
 				multiline:True
-				text:'Text to be translated:\n翻訳する'
+				text:'Text to be translated:\n翻訳したいテキスト'
 
 
 			TextInput:
 				id:inputted_text
 				
 			Label:
+				canvas.before:
+	        		Color:
+	            		rgba: .3, .5, .7, 1
+	        		Line:
+	            		width: 2
+	            		rectangle: self.x, self.y, self.width, self.height
 				font_name:"/home/sam-gooby/fun_projects/katakana-meme-translator/JapaneseCharSet/NotoSansCJK-Regular.ttc"
 				multiline:True
-				text:'Outputted Translation\n翻訳出力'
+				text:'Outputted Translation:\n出力された翻訳'
 
 				
 
@@ -50,7 +69,7 @@
 
 <Button>:
 
-	font_size:15
+	font_size:30
 	color:0.3,0.6,0.7,1
 	size_hint: 0.3, 0.5
 

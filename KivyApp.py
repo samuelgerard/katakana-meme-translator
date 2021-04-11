@@ -11,6 +11,8 @@ from kivy.uix.floatlayout import FloatLayout
 
 from katakana_shitpost_bot import *
 
+App_Version = '1.0.0'
+
 # class Touch(Widget):
 
 # 	btn = ObjectProperty(None)
@@ -34,13 +36,13 @@ class MyGrid(Widget):
 
 
 	def btn(self):
+		self.output_text.text = "Now Querying and translating....(Depending on the size of wall it text, the translation can take up to 45-60 seconds)"
 		print(f"Inputted_text: {self.inputted_text.text}")
 		temp_string = self.inputted_text
 		print(f'the string is:{temp_string.text}')
 		li = list(temp_string.text.split(" "))
 		self.return_string = self.katakana_translator.Activate_shitpost(li)
 		
-		print(str(" ".join(self.return_string)))
 
 		self.output_text.text = str(" ".join(self.return_string))
 
@@ -83,7 +85,7 @@ class MyGrid(Widget):
 
 class MyApp(App):
 	def build(self):
-		self.title = "Full Katakana Translator"
+		self.title = f"Full Katakana Translator Ver. {App_Version}"
 		return MyGrid()
 
 if __name__ == '__main__':
