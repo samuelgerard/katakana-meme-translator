@@ -6,7 +6,7 @@ Instructions on how to start:
 - create a python environment (python3/python -m venv **name of venv goes here**) 
 - Activate the venv 
     - (for ***Linux***) -> Source /**name of venv**/bin/activate 
-    - (for ***Windows***) -> /**name of env**/Scripts/activate.bin
+    - (for ***Windows***) -> /**name of env**/Scripts/activate.bat
 - pip install -r requirements.txt
 - python3 KivyApp.py
 - Enjoy 
